@@ -5,9 +5,9 @@ import { render } from './render.js';
 
 const siteHeaderElement = document.querySelector('.trip-main');
 const siteMainElement = document.querySelector('.page-main');
-const tripPresenterElement = new TripEventsPresenter();
+const tripPresenterElement = new TripEventsPresenter(siteMainElement.querySelector('.trip-events'));
 
 render(new FiltersView(), siteHeaderElement.querySelector('.trip-controls__filters'));
 render(new SiteMenuView(), siteHeaderElement.querySelector('.trip-controls__navigation'));
 
-tripPresenterElement.init(siteMainElement.querySelector('.trip-events'));
+tripPresenterElement.init();
